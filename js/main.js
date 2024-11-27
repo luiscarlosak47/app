@@ -6,6 +6,7 @@ const lang = Go.lang().current() || "en";
 import(Go.base("", `/lang/${lang}.js`)).then((lang) => {
   Go.lang(lang);
   import(Go.base("", `/js/views.js`)).then((views) => {
+    Go.views(views);
     Go.do("nav/start");
   });
 });
