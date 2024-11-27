@@ -1,0 +1,8 @@
+{
+  "name": "github-apps",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "push": "git add . && git commit -m 'Update' && git push"
+  }
+}
