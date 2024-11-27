@@ -1,0 +1,9 @@
+{
+  "key": "ai-tools",
+  "name": "AI Tools",
+  "description": "AI%20Tools",
+  "icon": "api/image/?id=NjZlMjM0ZTBhZWVmZDA4YTlmYmQ3NjdlLy1BLS9iSFZwYzJOaGNteHZjMmgxY25SaFpHOD0=",
+  "start_url": "/app/ai/",
+  "domains": "",
+  "version": "1.0.0"
+}

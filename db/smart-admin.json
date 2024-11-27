@@ -1,0 +1,10 @@
+{
+  "key": "smart-admin",
+  "name": "Smart Admin",
+  "description": "Smart%20Admin",
+  "icon": "api/image/?id=NjZlMjM2ZTVhZWVmZDA4YTlmYmQ3NmRkLy1BLS9iSFZwYzJOaGNteHZjMmgxY25SaFpHOD0=",
+  "start_url": "/app/smart-admin",
+  "start_cmd": "",
+  "domains": "",
+  "version": "1.0.0"
+}
