@@ -1,5 +1,8 @@
+/nodemon.json
 /package.json
+/server.js
 /package-lock.json
+/webpack.config.js
 
 /src
 /build
