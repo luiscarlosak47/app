@@ -4,11 +4,9 @@ import "../sdk/go.js/go.router.js";
 const lang = Go.lang().current() || "en";
 
 import(Go.base("", `/lang/${lang}.js`)).then((lang) => {
-  console.log(lang);
-  Go.lang(lang);
+  Go.lang(lang.default);
   import(Go.base("", `/js/views.js`)).then((views) => {
-    console.log(views);
-    Go.views(views);
+    Go.views(views.default);
     Go.do("nav/start");
   });
 });
