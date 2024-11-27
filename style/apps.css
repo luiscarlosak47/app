@@ -1,0 +1,114 @@
+.apps {
+  margin: auto;
+  padding: calc(var(--gap) * 1.5);
+  width: 100%;
+}
+
+.desktopMessage {
+  font-size: 120%;
+  font-weight: 500;
+}
+
+.appsTitle {
+  margin: 0.67em 0 1em 0;
+}
+
+.appsList,
+.search_result {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--app-icon-size) * 1.1), 1fr));
+  gap: calc(var(--gap));
+}
+
+.appsList .app,
+.search_result .app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  * {
+    transition: var(--app-transition);
+  }
+}
+
+.appsList .app:active,
+.search_result .app:active {
+  opacity: 0.5;
+}
+
+.appsList .app .icon,
+.search_result .app .icon {
+  width: calc(var(--gap) * 4.4);
+  height: calc(var(--gap) * 4.4);
+  border-radius: calc(var(--gap));
+  margin: 0 0 calc(var(--gap) * 0.5) 0;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: var(--app-transition);
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+}
+
+.appsList .app .name,
+.search_result .app .name {
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-size: 90%;
+}
+
+.search_result {
+  padding: calc(var(--gap) * 1) calc(var(--gap) * 1);
+}
+
+@media (min-width: 590px) {
+  .desktopApps,
+  .search_result {
+    gap: calc(var(--gap) * 1.5);
+  }
+
+  .desktopApps .app .icon,
+  .search_result .app .icon {
+    width: calc(var(--gap) * 6);
+    height: calc(var(--gap) * 6);
+  }
+}
+
+@media (min-width: 768px) {
+  .appsList,
+  .search_result {
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--app-icon-size) * 1.5), 1fr));
+  }
+
+  .appsList .app .icon,
+  .search_result .app .icon {
+    width: calc(var(--gap) * 7);
+    height: calc(var(--gap) * 7);
+    border-radius: calc(var(--gap) * 1.2);
+  }
+
+  .appsList .app .name,
+  .search_result .app .name {
+    font-size: 100%;
+    margin: calc(var(--gap) * 0.5) 0 0 0;
+  }
+
+  .appsList .app:hover .icon,
+  .search_result .app:hover .icon {
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .appsList,
+  .search_result {
+    gap: calc(var(--gap) * 2);
+  }
+}

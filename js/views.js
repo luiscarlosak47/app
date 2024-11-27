@@ -1,12 +1,4 @@
 export default {
-  "/app/": {
-    name: "home",
-    html: "<div>HELLO WORLD</div>",
-    target: ".body",
-  },
-  404: {
-    name: "404",
-    html: "<div>404</div>",
-    target: ".body",
-  },
+  "/app/": Go.context("apps/route"),
+  404: Go.context("template/404"),
 };

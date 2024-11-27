@@ -1,6 +1,7 @@
 import "../sdk/go.js/go.js";
 import "../sdk/go.js/go.router.js";
 import "./apps.js";
+import "./template.js";
 
 const App = Promise.all([
   import(Go.base("", `/lang/${Go.lang().current() || "en"}.js`)), // lang
