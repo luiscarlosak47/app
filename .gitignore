@@ -9,5 +9,7 @@
 /local
 /private
 
+.env
+
 node_modules/
 **/node_modules/
