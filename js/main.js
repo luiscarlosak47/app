@@ -1,12 +1,21 @@
 import "../sdk/go.js/go.js";
 import "../sdk/go.js/go.router.js";
+import "./apps.js";
 
-const lang = Go.lang().current() || "en";
+const App = Promise.all([
+  import(Go.base("", `/lang/${Go.lang().current() || "en"}.js`)), // lang
+  import(Go.base("", `/js/icons.js`)), // icons
+  import(Go.base("", `/js/views.js`)), // views
+]);
 
-import(Go.base("", `/lang/${lang}.js`)).then((lang) => {
+App.then(([lang, icons, views]) => {
   Go.lang(lang.default);
-  import(Go.base("", `/js/views.js`)).then((views) => {
-    Go.views(views.default);
-    Go.do("nav/start");
-  });
+  Go.icons(icons.default);
+  Go.views(views.default);
+  Go.do("nav/start");
+});
+
+App.catch((err) => {
+  console.error(err);
+  Go.alert(Go.getErrorMessage(err));
 });
