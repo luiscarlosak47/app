@@ -69,7 +69,7 @@ Go.set("apps").loadApps = async function (target) {
 
 Go.set("apps").createTemplate = function (app) {
   return `<div class="content ${app.key}">
-    <div class="icon ${!app.icon && "loading"}" style='--img: url("${app.icon}")'></div>
+    <div class="icon ${!app.icon && "loading"}" style='--img: url("${Go.base("", app.icon)}")'></div>
     <p class="name">${app.name}</p>
   </div>`;
 };
