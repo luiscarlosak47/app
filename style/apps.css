@@ -116,11 +116,23 @@
   .search_result {
     gap: calc(var(--gap) * 2);
   }
+
+  .appsList .app .name,
+  .search_result .app .name {
+    font-size: 100%;
+    margin: calc(var(--gap) * 1) 0 0 0;
+  }
 }
 
 @media (min-width: 1280px) {
   .appsList,
   .search_result {
     gap: calc(var(--gap) * 3);
+  }
+
+  .appsList .app .name,
+  .search_result .app .name {
+    font-size: 100%;
+    margin: calc(var(--gap) * 1) 0 0 0;
   }
 }
