@@ -33,6 +33,13 @@
   }
 }
 
+.appsList .app .content,
+.search_result .app .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .appsList .app:active,
 .search_result .app:active {
   opacity: 0.5;
