@@ -29,6 +29,9 @@ Go.set("apps").route = function () {
             to: { opacity: 1, transform: "translateY(0px)" },
           },
           childrens: Go.arrayFill(this.limit).map(() => Go.do("apps/app", {})),
+          onRender: (element) => {
+            Go.do("apps/loadApps", element);
+          },
         },
       ],
     });
@@ -39,5 +42,22 @@ Go.set("apps").app = function (app, index) {
     tagName: "a",
     class: "app",
     innerHTML: app.name || Go.lang("loading") + "...",
+    setNewApp: function (app) {
+      this.innerHTML = app.name;
+    },
+    quitApp: function () {},
   };
+};
+
+Go.set("apps").loadApps = async function (target) {
+  try {
+    this.apps = await Go.http.get(Go.base("", "db/apps.json"));
+  } catch (error) {
+    return Go.alert(Go.getErrorMessage(error));
+  }
+
+  target.querySelectorAll(".app").forEach((app, index) => {
+    const infoApp = this.apps[index];
+    infoApp ? app.setNewApp(infoApp) : app.quitApp();
+  });
 };
