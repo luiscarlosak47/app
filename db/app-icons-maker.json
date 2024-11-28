@@ -1,9 +1,1 @@
-{
-  "key": "app-icons-maker",
-  "name": "App Icons Maker",
-  "description": "Create%20all%20icons%20for%20your%20app%20from%20one%20place",
-  "icon": "img/apps/app-icons-maker.png",
-  "start_url": "/app/app-icons-maker/",
-  "domains": "",
-  "version": "1.0.0"
-}
+{"key":"app-icons-maker","name":"App Icons Maker","description":"Create%20all%20icons%20for%20your%20app%20from%20one%20place","icon":"/img/apps/app-icons-maker.png","start_url":"/app/app-icons-maker/","domains":"","version":"1.0.0"}

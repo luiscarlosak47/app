@@ -1,1 +1,1 @@
-{"key":"menu-qr","name":"Menu QR","description":"Create%20your%20QR%20Menu","icon":"img/apps/menu-qr.png","start_url":"/app/menu-qr/","start_cmd":"","domains":"","version":"1.0.0"}
+{"key":"menu-qr","name":"Menu QR","description":"Create%20your%20QR%20Menu","icon":"/img/apps/menu-qr.png","start_url":"/app/menu-qr/","start_cmd":"","domains":"","version":"1.0.0"}
