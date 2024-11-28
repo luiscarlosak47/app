@@ -41,17 +41,12 @@ Go.set("apps").app = function (app, index) {
   return {
     tagName: "a",
     class: "app",
-    innerHTML: `<div>
-      <div class="icon loading"></div>
-      <p class="name">${app.name || Go.lang("loading") + "..."}</p>
-    </div>`,
+    innerHTML: Go.do("apps/createTemplate", { ...app, name: Go.lang("loading") + "..." }),
     setNewApp: async function (app) {
-      this.innerHTML = `<div>
-        <div class="icon ${!app.icon && "loading"}" style="--img: url(${app.icon})"></div>
-        <p class="name">${app.name}</p>
-      </div>`;
-
+      this.innerHTML = Go.do("apps/createTemplate", app);
       this.appData = await Go.http.get(Go.base("", `/db/${app.key}.json`));
+      if (!this.appData) return;
+      this.innerHTML = Go.do("apps/createTemplate", this.appData);
     },
     quitApp: function () {
       this.remove();
@@ -70,4 +65,11 @@ Go.set("apps").loadApps = async function (target) {
     const infoApp = this.apps[index];
     infoApp ? app.setNewApp(infoApp) : app.quitApp();
   });
+};
+
+Go.set("apps").createTemplate = function (app) {
+  return `<div class="content ${app.key}">
+    <div class="icon ${!app.icon && "loading"}" style='--img: url("${app.icon}")'></div>
+    <p class="name">${app.name}</p>
+  </div>`;
 };
