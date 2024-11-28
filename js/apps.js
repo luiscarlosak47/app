@@ -47,6 +47,7 @@ Go.set("apps").app = function (app, index) {
       this.appData = await Go.http.get(Go.base("", `/db/${app.key}.json`));
       if (!this.appData) return;
       this.innerHTML = Go.do("apps/createTemplate", this.appData);
+      this.onclick = () => Go.do("apps/openApp", this.appData);
     },
     quitApp: function () {
       this.remove();
@@ -72,4 +73,10 @@ Go.set("apps").createTemplate = function (app) {
     <div class="icon ${!app.icon && "loading"}" style='--img: url("${Go.base("", app.icon)}")'></div>
     <p class="name">${app.name}</p>
   </div>`;
+};
+
+Go.set("apps").openApp = function (app) {
+  this.startUrl = Go.lower(app.start_url || `/app/${app.name}`).replaceAll(" ", "-");
+  this.appUrl = `http://www.luigios.com/${this.startUrl}`;
+  window.open(Go.url(this.appUrl).fix(), "_blank");
 };
