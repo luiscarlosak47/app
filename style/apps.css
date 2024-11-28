@@ -52,6 +52,11 @@
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
 }
 
+.appsList .app .icon.loading,
+.search_result .app .icon.loading {
+  background-color: var(--border-color);
+}
+
 .appsList .app .name,
 .search_result .app .name {
   line-clamp: 1;

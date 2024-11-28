@@ -2,4 +2,5 @@
   --primary-color: #0366d6;
   --secondary-color: #24292f;
   --app-icon-size: 72px;
+  --app-transition: all 0.25s ease-in-out;
 }

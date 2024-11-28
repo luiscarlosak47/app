@@ -41,11 +41,21 @@ Go.set("apps").app = function (app, index) {
   return {
     tagName: "a",
     class: "app",
-    innerHTML: app.name || Go.lang("loading") + "...",
-    setNewApp: function (app) {
-      this.innerHTML = app.name;
+    innerHTML: `<div>
+      <div class="icon loading"></div>
+      <p class="name">${app.name || Go.lang("loading") + "..."}</p>
+    </div>`,
+    setNewApp: async function (app) {
+      this.innerHTML = `<div>
+        <div class="icon ${!app.icon && "loading"}" style="--img: url(${app.icon})"></div>
+        <p class="name">${app.name}</p>
+      </div>`;
+
+      this.appData = await Go.http.get(Go.base("", `/db/${app.key}.json`));
     },
-    quitApp: function () {},
+    quitApp: function () {
+      this.remove();
+    },
   };
 };
 
