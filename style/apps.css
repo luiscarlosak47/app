@@ -50,7 +50,7 @@
   width: calc(var(--gap) * 4.4);
   height: calc(var(--gap) * 4.4);
   border-radius: calc(var(--gap));
-  margin: 0 0 calc(var(--gap) * 0.5) 0;
+  margin: auto;
   background-image: var(--img);
   background-size: cover;
   background-position: center;
