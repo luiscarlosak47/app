@@ -1,5 +1,5 @@
 Go.set("apps").route = function () {
-  this.limit = 10;
+  this.limit = 50;
   this.name = "home";
   this.target = ".body";
   this.html = () =>
